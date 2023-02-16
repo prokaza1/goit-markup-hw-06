@@ -83,10 +83,34 @@ body {
   gap: 76px;
   align-items: center;
 }
+
 .navigation-list {
   display: flex;
   gap: 40px;
 }
+.navigation-active {
+  display: block;
+  padding: 24px 0;
+  font-weight: 500;
+  position: relative;
+  line-height: 1.33;
+  color: var(--second-btn-color);
+
+  letter-spacing: 0.02em;
+}
+
+.link-active::after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  bottom: -1px;
+  color: var(--second-btn-color);
+  background-color: var(--btn-text-color);
+}
+
 .navigation-link {
   display: block;
   padding: 24px 0;
@@ -96,20 +120,11 @@ body {
   color: var(--color-tx-ourworkers);
 
   letter-spacing: 0.02em;
-  transition-property: color, background-color;
+  transition-property: color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.link-active::after {
-  position: absolute;
-  content: "";
-  display: block;
-  width: 100%;
-  height: 4px;
-  border-radius: 2px;
-  bottom: -1px;
-  background-color: var(--btn-text-color);
-}
+
 /* .navigation-link:focus::after {
   content: "";
   display: block;
@@ -223,6 +238,7 @@ address {
   align-items: center;
   width: 264px;
   height: 112px;
+  border-radius: 4px;
   background-color: var(--btn-bg-color);
 }
 .strengths-title {
@@ -437,6 +453,63 @@ img {
 .social-icon {
   fill: var(--btn-bg-color);
 }
+/* =============== SUBSCRIBE =============== */
+.subscribe {
+  margin-left: 80px;
+}
+.subscribe-title {
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-color-hero);
+  margin-bottom: 16px;
+}
+.footer-form {
+  display: flex;
+  flex-direction: row;
+}
+.footer-email {
+  background: inherit;
+  color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-email:hover,
+.footer-email:focus {
+  border: 1px solid #4d5ae5;
+}
+.footer-subscribe-btn {
+  cursor: pointer;
+  display: flex;
+  background: var(--first-btn-color);
+  border-radius: 4px;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--text-color-hero);
+  letter-spacing: 0.04em;
+  border: none;
+  text-align: center;
+  justify-content: center;
+  margin-left: 24px;
+  padding: 8px 24px;
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  gap: 16px;
+}
+.footer-subscribe-btn:hover,
+.footer-subscribe-btn:focus {
+  background: var(--second-btn-color);
+}
+/* .footer-subscribe-icon {
+  text-align: center;
+  justify-content: center;
+} */
 
 /* ----------PORTFOLIO.HTML--------------- */
 .card-menu {
@@ -499,7 +572,7 @@ img {
   left: 0;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition-property: transform;
+  transition-property: transform, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -507,6 +580,8 @@ img {
 .cards-item:hover .overlay-text,
 .cards-item:focus .overlay-text {
   transform: translateY(0);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .cards-description {
   border: 1px solid var(--btn-sol-color);
@@ -519,11 +594,12 @@ img {
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.cards-description:hover,
-.cards-description:focus {
+.cards-item:focus .cards-description,
+.cards-item:hover .cards-description {
   box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
 .cards-list {
   display: flex;
   column-gap: 24px;
@@ -542,6 +618,7 @@ img {
   letter-spacing: 0.02em;
   color: var(--color-tx-ourworkers);
 }
+
 /* =============== modal window ================*/
 .backdrop {
   position: fixed;
@@ -603,4 +680,36 @@ img {
 .modal-close-btn:hover .modal-close-btn-icon,
 .modal-close-btn:focus .modal-close-btn-icon {
   fill: #ffffff;
+}
+.backdrop-title {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 72px;
+  margin-bottom: 16px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #2e2f42;
+}
+.backdrop-form {
+  margin-left: 24px;
+  gap: 8px;
+}
+.backdrop-input {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+}
+.backdrop-name {
+  letter-spacing: 0.01em;
+  color: #8e8f99;
+}
+.backdrop-textarea {
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  resize: both;
+}
+.backdrop-send-btn {
 }
