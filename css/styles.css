@@ -506,10 +506,6 @@ img {
 .footer-subscribe-btn:focus {
   background: var(--second-btn-color);
 }
-/* .footer-subscribe-icon {
-  text-align: center;
-  justify-content: center;
-} */
 
 /* ----------PORTFOLIO.HTML--------------- */
 .card-menu {
@@ -562,7 +558,6 @@ img {
 }
 .overlay-text {
   letter-spacing: 0.02em;
-
   padding: 40px 32px;
   color: #f4f4fd;
   position: absolute;
@@ -572,7 +567,7 @@ img {
   left: 0;
   background-color: #4d5ae5;
   transform: translateY(100%);
-  transition-property: transform, box-shadow;
+  transition-property: transform;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -580,8 +575,6 @@ img {
 .cards-item:hover .overlay-text,
 .cards-item:focus .overlay-text {
   transform: translateY(0);
-  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
-    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 .cards-description {
   border: 1px solid var(--btn-sol-color);
@@ -631,7 +624,6 @@ img {
   transition: opacity, visibility;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-
   transition-delay: 0;
 }
 .backdrop.is-hidden {
@@ -641,7 +633,7 @@ img {
 }
 .modal {
   width: 408px;
-  height: 576px;
+  height: 584px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -686,30 +678,119 @@ img {
   font-size: 16px;
   line-height: 1.5;
   margin-top: 72px;
-  margin-bottom: 16px;
+
   text-align: center;
   letter-spacing: 0.02em;
 
   color: #2e2f42;
 }
 .backdrop-form {
+  display: flex;
+  flex-direction: column;
   margin-left: 24px;
-  gap: 8px;
 }
 .backdrop-input {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  width: 360px;
+  height: 40px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-input:hover,
+.backdrop-input:focus {
+  border: 1px solid var(--second-btn-color);
 }
 .backdrop-name {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
   letter-spacing: 0.01em;
   color: #8e8f99;
+  margin-top: 8px;
+  margin-bottom: 4px;
 }
 .backdrop-textarea {
-  letter-spacing: 0.04em;
-  color: rgba(117, 117, 117, 0.5);
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  resize: both;
+  resize: horizontal;
+  width: 360px;
+  height: 120px;
+  transition-property: border;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-textarea:hover,
+.backdrop-textarea:focus {
+  border: 1px solid var(--second-btn-color);
+}
+.backdrop-textarea::placeholder {
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+.backdrop-label {
+  position: relative;
+  padding: 0 0;
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.backdrop-icon {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+  bottom: 8px;
+}
+.backdrop-label:hover,
+.backdrop-label:focus {
+  fill: #404bbf;
 }
 .backdrop-send-btn {
+  background: #4d5ae5;
+  border: none;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.04em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  width: 169px;
+  height: 56px;
+  color: #ffffff;
+  margin: 24px auto;
+  margin-bottom: 24px;
+  transition-property: background;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-send-btn:hover,
+.backdrop-send-btn:focus {
+  background: var(--second-btn-color);
+}
+.accept {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  margin-top: 16px;
+  margin-bottom: 0;
+}
+.backdrop-icon-accept {
+  background-color: #ffffff;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.backdrop-icon-accept:hover,
+.backdrop-icon-accept:focus {
+  background-color: #404bbf;
+}
+.backdrop-accept {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  color: #757575;
 }
