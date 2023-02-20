@@ -465,7 +465,7 @@ img {
 }
 .footer-form {
   display: flex;
-  flex-direction: row;
+  text-align: center;
 }
 .footer-email {
   width: 264px;
@@ -647,6 +647,7 @@ img {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
+  padding: 72px 24px 24px;
 }
 .modal-close-btn {
   cursor: pointer;
@@ -682,19 +683,16 @@ img {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
-  margin-top: 72px;
-
   text-align: center;
   letter-spacing: 0.02em;
-
   color: #2e2f42;
 }
 .backdrop-form {
   display: flex;
   flex-direction: column;
-  margin-left: 24px;
 }
 .backdrop-input {
+  padding-left: 38px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   width: 360px;
@@ -707,7 +705,7 @@ img {
 .backdrop-input:focus {
   border: 1px solid var(--second-btn-color);
 }
-.backdrop-name {
+/* .backdrop-name {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -715,8 +713,18 @@ img {
   color: #8e8f99;
   margin-top: 8px;
   margin-bottom: 4px;
-}
+} */
+
 .backdrop-textarea {
+  resize: none;
+  outline: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: #8e8f99;
+  margin-top: 8px;
+  margin-bottom: 4px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   resize: horizontal;
@@ -731,10 +739,23 @@ img {
   border: 1px solid var(--second-btn-color);
 }
 .backdrop-textarea::placeholder {
+  padding-top: 8px;
+  padding-left: 16px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
   letter-spacing: 0.04em;
   color: rgba(117, 117, 117, 0.5);
 }
 .backdrop-label {
+  outline: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.01em;
+  color: #8e8f99;
+  margin-top: 8px;
+  margin-bottom: 4px;
   position: relative;
   padding: 0 0;
   transition-property: fill;
@@ -744,7 +765,7 @@ img {
 
 .backdrop-icon {
   position: absolute;
-  top: 8px;
+  top: 24px;
   left: 16px;
   bottom: 8px;
 }
@@ -762,35 +783,88 @@ img {
   border-radius: 4px;
   width: 169px;
   height: 56px;
-  color: #ffffff;
-  margin: 24px auto;
-  margin-bottom: 24px;
+  margin-top: 24px;
+  margin-left: auto;
+  margin-right: auto;
+  cursor: pointer;
   transition-property: background;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #ffffff;
 }
 .backdrop-send-btn:hover,
 .backdrop-send-btn:focus {
   background: var(--second-btn-color);
 }
-.accept {
+.checkbox-accept {
   display: flex;
   flex-direction: row;
   gap: 8px;
   margin-top: 16px;
   margin-bottom: 0;
 }
-.backdrop-icon-accept {
-  background-color: #ffffff;
+.checkbox-accept::before {
+  display: block;
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
+  width: 16px;
+  height: 16px;
+  content: "";
+  cursor: pointer;
+}
+.backdrop-checkbox:checked + .checkbox-accept::before {
+  background-image: url(../images/chekbox.svg);
+  background-color: #404bbf;
+  border-color: #404bbf;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.backdrop-checkbox:hover + .checkbox-accept::before {
+  background-image: url(../images/chekbox.svg);
+  background-color: #404bbf;
+  border-color: #404bbf;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.backdrop-checkbox:focus + .checkbox-accept::before {
+  background-image: url(../images/chekbox.svg);
+  background-color: #404bbf;
+  border-color: #404bbf;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+/* .backdrop-checkbox:focus + .checkbox-accept::before {
+  background-image: url(../images/check-box.svg);
+  background-color: #404bbf;
+  border-color: #404bbf;
+  background-repeat: no-repeat;
+  background-position: center;
+} */
+
+/* .backdrop-icon-accept {
+  background-color: #ffffff;
+  border: 1.25px solid #2e2f42;
   transition-property: background-color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.backdrop-icon-accept:hover,
-.backdrop-icon-accept:focus {
+.backdrop-icon-accept {
   background-color: #404bbf;
+} */
+.visabilly-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
 }
 .backdrop-accept {
   font-weight: 400;
@@ -798,4 +872,11 @@ img {
   line-height: 16px;
   letter-spacing: 0.04em;
   color: #757575;
+}
+.backdrop-privacy {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #4d5ae5;
 }

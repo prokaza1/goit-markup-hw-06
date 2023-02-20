@@ -428,22 +428,24 @@
         </div>
         <div class="subscribe">
           <p class="subscribe-title">Subscribe</p>
-          <form name="signup_form" autocomplete="on" novalidate>
-            <div class="footer-form">
-              <label>
-                <input
-                  type="email"
-                  name="email"
-                  placeholder="E-mail"
-                  class="footer-email"
-              /></label>
-              <button type="submit" class="footer-subscribe-btn">
-                Subscribe
-                <svg class="footer-subscribe-icon" width="24" height="24">
-                  <use href="./images/icon.svg#icon-footer-subscribe"></use>
-                </svg>
-              </button>
-            </div>
+          <form
+            name="signup_form"
+            autocomplete="on"
+            novalidate
+            class="footer-form"
+          >
+            <input
+              type="email"
+              name="email"
+              placeholder="E-mail"
+              class="footer-email"
+            />
+            <button type="submit" class="footer-subscribe-btn">
+              Subscribe
+              <svg class="footer-subscribe-icon" width="24" height="24">
+                <use href="./images/icon.svg#icon-footer-subscribe"></use>
+              </svg>
+            </button>
           </form>
         </div>
       </div>
@@ -464,50 +466,67 @@
           novalidate
           class="backdrop-form"
         >
-          <p class="backdrop-name">Name</p>
-          <label class="backdrop-label">
+          <!-- <p class="backdrop-name"></p> -->
+          <label class="backdrop-label"
+            >Name
             <input
               type="text"
               name="username"
               autofocus
               class="backdrop-input"
+              required
             />
             <svg width="18px" height="24px" class="backdrop-icon">
               <use href="./images/icon.svg#icon-backdrop-name"></use>
             </svg>
           </label>
-          <p class="backdrop-name">Phone</p>
-          <label class="backdrop-label">
-            <input type="tel" name="phone_number" class="backdrop-input" />
+
+          <label class="backdrop-label"
+            >Phone
+            <input
+              type="tel"
+              name="phone_number"
+              class="backdrop-input"
+              required
+            />
             <svg width="18px" height="24px" class="backdrop-icon">
               <use href="./images/icon.svg#icon-backdrop-phone"></use>
             </svg>
           </label>
-          <p class="backdrop-name">Email</p>
-          <label class="backdrop-label">
-            <input type="email" name="email" class="backdrop-input" />
+
+          <label class="backdrop-label"
+            >Email
+            <input type="email" name="email" class="backdrop-input" required />
             <svg width="18px" height="24px" class="backdrop-icon">
               <use href="./images/icon.svg#icon-backdrop-email"></use>
             </svg>
           </label>
-          <p class="backdrop-name">Comment</p>
-          <label>
+
+          <label class="backdrop-label"
+            >Comment
             <textarea
               name="coment"
               placeholder="Text input"
               class="backdrop-textarea"
             ></textarea>
           </label>
-          <div class="accept">
-            <svg width="16px" height="16px" class="backdrop-icon-accept">
-              <use href="./images/icon.svg#icon-chekbox"></use>
-            </svg>
+          <input
+            id="user-policy"
+            type="checkbox"
+            name="checkbox"
+            class="backdrop-checkbox visabilly-hidden"
+          />
 
-            <p class="backdrop-accept">
+          <label for="user-policy" class="checkbox-accept">
+            <!-- <svg width="16px" height="16px" class="backdrop-icon-accept">
+              <use href="./images/icon.svg#icon-chekbox"></use>
+            </svg> -->
+
+            <span class="backdrop-accept">
               I accept the terms and conditions of the
-              <a href="">Privacy Policy</a>
-            </p>
-          </div>
+              <a href="" class="backdrop-privacy">Privacy Policy</a>
+            </span>
+          </label>
           <button type="submit" class="backdrop-send-btn">Send</button>
         </form>
       </div>
