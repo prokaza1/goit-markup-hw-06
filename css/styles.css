@@ -718,15 +718,6 @@ img {
 .backdrop-input:focus {
   border: 1px solid var(--second-btn-color);
 }
-/* .backdrop-name {
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.01em;
-  color: #8e8f99;
-  margin-top: 8px;
-  margin-bottom: 4px;
-} */
 
 .backdrop-textarea {
   resize: none;
