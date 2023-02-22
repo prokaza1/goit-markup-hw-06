@@ -743,8 +743,6 @@ img {
   border: 1px solid var(--second-btn-color);
 }
 .backdrop-textarea::placeholder {
-  padding-top: 8px;
-
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
