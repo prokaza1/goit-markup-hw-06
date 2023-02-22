@@ -468,6 +468,7 @@ img {
   text-align: center;
 }
 .footer-email {
+  padding-left: 16px;
   width: 264px;
   height: 40px;
   background: inherit;
@@ -482,6 +483,12 @@ img {
 .footer-email:hover,
 .footer-email:focus {
   border: 1px solid #4d5ae5;
+}
+.footer-email::placeholder {
+  font-size: 12px;
+  line-height: 2, 0;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.6);
 }
 .footer-subscribe-btn {
   cursor: pointer;
@@ -536,7 +543,7 @@ img {
   border: 1px solid var(--btn-sol-color);
   border-radius: 4px;
   letter-spacing: 0.04em;
-  color: var(--btn-text-color);
+  color: var(--first-btn-color);
   transition-property: background, box-shadow, color;
   transition-duration: 250ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -680,6 +687,8 @@ img {
   fill: #ffffff;
 }
 .backdrop-title {
+  display: block;
+  margin-bottom: 16px;
   font-weight: 500;
   font-size: 16px;
   line-height: 1.5;
@@ -718,16 +727,16 @@ img {
 .backdrop-textarea {
   resize: none;
   outline: none;
-  font-weight: 400;
+
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.01em;
   color: #8e8f99;
-  margin-top: 8px;
-  margin-bottom: 4px;
+  margin-top: 4px;
+  margin-bottom: 16px;
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
-  resize: horizontal;
+  padding: 8px 16px;
   width: 360px;
   height: 120px;
   transition-property: border;
@@ -740,22 +749,23 @@ img {
 }
 .backdrop-textarea::placeholder {
   padding-top: 8px;
-  padding-left: 16px;
-  font-weight: 400;
+
   font-size: 12px;
   line-height: 1.5;
   letter-spacing: 0.04em;
   color: rgba(117, 117, 117, 0.5);
 }
 .backdrop-label {
+  display: block;
+  margin-top: 4px;
+  margin-bottom: 8px;
   outline: none;
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
   letter-spacing: 0.01em;
   color: #8e8f99;
-  margin-top: 8px;
-  margin-bottom: 4px;
+
   position: relative;
   padding: 0 0;
   transition-property: fill;
@@ -765,7 +775,7 @@ img {
 
 .backdrop-icon {
   position: absolute;
-  top: 24px;
+  top: 27px;
   left: 16px;
   bottom: 8px;
 }
@@ -805,7 +815,6 @@ img {
   display: flex;
   flex-direction: row;
   gap: 8px;
-  margin-top: 16px;
   margin-bottom: 0;
 }
 .checkbox-accept::before {
@@ -824,20 +833,7 @@ img {
   background-repeat: no-repeat;
   background-position: center;
 }
-.backdrop-checkbox:hover + .checkbox-accept::before {
-  background-image: url(../images/chekbox.svg);
-  background-color: #404bbf;
-  border-color: #404bbf;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.backdrop-checkbox:focus + .checkbox-accept::before {
-  background-image: url(../images/chekbox.svg);
-  background-color: #404bbf;
-  border-color: #404bbf;
-  background-repeat: no-repeat;
-  background-position: center;
-}
+
 /* .backdrop-checkbox:focus + .checkbox-accept::before {
   background-image: url(../images/check-box.svg);
   background-color: #404bbf;
